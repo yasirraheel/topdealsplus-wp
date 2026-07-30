@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Top Deals Plus</title>
+  <desc id="desc">Top Deals Plus logo with a teal plus mark and dark blue wordmark.</desc>
+  <rect width="1200" height="300" fill="#ffffff" fill-opacity="0"/>
+  <g transform="translate(38 38)">
+    <rect x="0" y="0" width="224" height="224" rx="52" fill="#0c2340"/>
+    <path d="M112 48v128M48 112h128" stroke="#19d3c5" stroke-width="28" stroke-linecap="round"/>
+    <circle cx="177" cy="47" r="18" fill="#ffb547"/>
+  </g>
+  <text x="300" y="144" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="700" letter-spacing="-2" fill="#0c2340">Top Deals</text>
+  <text x="300" y="224" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="1" fill="#19a89e">Plus</text>
+</svg>

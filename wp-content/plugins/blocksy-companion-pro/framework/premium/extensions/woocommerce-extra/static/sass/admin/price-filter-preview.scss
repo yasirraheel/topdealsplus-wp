@@ -1,0 +1,12 @@
+@use '../../../static/sass/filters/price-filter';
+
+.ct-price-filter {
+	pointer-events: none;
+}
+
+.ct-price-filter-input {
+
+	input {
+		width: 100%;
+	}
+}

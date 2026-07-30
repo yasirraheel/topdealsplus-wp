@@ -1,0 +1,12 @@
+@use 'fonts-list';
+@use 'upload-font';
+@use 'preload-font';
+
+.ct-custom-fonts-options {
+	padding-top: 40px;
+	border-top: 1px dashed #eee;
+
+	.ct-button-primary {
+		margin-top: 35px;
+	}
+}

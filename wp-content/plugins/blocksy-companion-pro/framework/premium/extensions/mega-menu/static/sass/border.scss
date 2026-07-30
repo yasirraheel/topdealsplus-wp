@@ -1,0 +1,19 @@
+.menu > [class*='ct-mega-menu'] {
+
+	> .sub-menu > .menu-item {
+		border-top: none;
+	}
+
+	// column border
+	&[class*="columns-2"] > .sub-menu > li:not(:nth-child(2n)),
+	&[class*="columns-3"] > .sub-menu > li:not(:nth-child(3n)),
+	&[class*="columns-4"] > .sub-menu > li:not(:nth-child(4n)),
+	&[class*="columns-5"] > .sub-menu > li:not(:nth-child(5n)),
+	&[class*="columns-6"] > .sub-menu > li:not(:nth-child(6n)) {
+		border-inline-end: var(--dropdown-columns-divider);
+	}
+
+	.sub-menu [class*="ct-toggle-dropdown-desktop"] {
+		display: none;
+	}
+}

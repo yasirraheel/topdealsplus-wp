@@ -1,0 +1,41 @@
+.ct-rating-filter {
+
+	ul {
+		gap: 0;
+	}
+
+	li {
+		&:not(:last-child) a {
+			padding-inline-end: 3px;
+		}
+
+		&:not(:first-child) a {
+			padding-inline-start: 3px;
+		}
+
+		&.active a,
+		&:has(~ .active) a,
+		&:hover a,
+		&:has(~ :hover) a {
+			color: var(--star-rating-initial-color, #FDA256);
+		}
+
+		&:hover ~ li a {
+			color: var(--star-rating-inactive-color, #F9DFCC);
+		}
+
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--star-rating-inactive-color, #F9DFCC);
+		}
+	}
+
+	// tooltip
+	.ct-tooltip {
+		--ct-tooltip-vertical-initial-offset: 5px;
+		--ct-tooltip-vertical-hover-offset: 10px;
+	}
+}

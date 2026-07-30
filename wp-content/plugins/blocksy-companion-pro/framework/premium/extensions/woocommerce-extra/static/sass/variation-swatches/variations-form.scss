@@ -1,0 +1,22 @@
+.ct-variation-swatches {
+
+	&:not([data-swatches-type='select']) select {
+		display: none !important;
+	}
+}
+
+// inline type
+form.variations_form[data-variations-layout="inline"] {
+	table.variations tr {
+		flex-direction: row;
+
+		th {
+			padding-top: 0.25em;
+			width: 30%;
+		}
+
+		td {
+			width: 70%;
+		}
+	}
+}

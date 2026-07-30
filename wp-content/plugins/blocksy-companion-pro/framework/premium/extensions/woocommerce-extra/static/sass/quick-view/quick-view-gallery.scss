@@ -1,0 +1,25 @@
+.ct-quick-view-card {
+
+	.woocommerce-product-gallery {
+		margin: 0;
+
+		// badges
+		--badge-top: 20px;
+		--badge-left: 20px;
+	}
+
+	// flexy
+	.flexy-container {
+		position: relative;
+	}
+
+	.flexy-pills[data-type="circle"] {
+		position: absolute;
+		z-index: 2;
+		inset-inline: 0;
+		bottom: 30px;
+		
+		--flexy-initial-pill-color: rgba(255, 255, 255, 0.6);
+		--flexy-active-pill-color: #fff;
+	}
+}

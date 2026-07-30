@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="180" viewBox="0 0 800 180" role="img" aria-labelledby="title desc">
+  <title id="title">Top Deals Plus</title>
+  <desc id="desc">Top Deals Plus logo with a teal and orange plus mark and white wordmark.</desc>
+  <g transform="translate(12 18)">
+    <rect x="0" y="0" width="144" height="144" rx="34" fill="#19d3c5"/>
+    <path d="M72 34v76M34 72h76" stroke="#0c2340" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="113" cy="31" r="13" fill="#ffb547"/>
+  </g>
+  <text x="190" y="112" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="-1" fill="#ffffff">Top Deals Plus</text>
+</svg>

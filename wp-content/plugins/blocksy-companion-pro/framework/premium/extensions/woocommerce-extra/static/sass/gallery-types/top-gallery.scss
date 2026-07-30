@@ -1,0 +1,15 @@
+@use "../../../../../../../static/sass/frontend/common-frontend/functions";
+
+
+.woocommerce-product-gallery[data-gallery="top"] .flexy-pills {
+
+	@include functions.media-breakpoint-up(lg) {
+		max-width: 60%;
+		margin-inline: auto;
+
+		ol:not([data-flexy]),
+		ol[data-flexy*="paused"] {
+			--pills-horizontal-alignment: center;
+		}
+	}
+}

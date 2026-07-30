@@ -1,0 +1,39 @@
+@use '../../../../../../../static/sass/frontend/common-frontend/functions';
+
+.ct-woocommerce-waitlist-table {
+
+	.waitlist-product-status,
+	.waitlist-subscription-status,
+	.waitlist-product-actions {
+		width: 20%;
+	}
+
+	.waitlist-product-actions {
+
+		.button {
+			width: 100%;
+		}
+	}
+
+	.waitlist-product-mobile-actions {
+		margin-top: 1em;
+
+		ul {
+			font-size: 14px;
+			list-style: none;
+			margin-bottom: 1em;
+			padding-inline-start: initial;
+
+			li {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+	}
+
+	@include functions.media-breakpoint-down (md) {
+		:is(.waitlist-product-status, .waitlist-subscription-status, .waitlist-product-actions) {
+			display: none;	
+		}
+	}
+}

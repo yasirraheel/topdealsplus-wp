@@ -1,0 +1,6 @@
+.woocommerce-product-gallery[data-gallery="columns-top"] {
+
+	.ct-product-gallery-container {
+		--grid-columns-gap: var(--thumbs-spacing, 15px);
+	}
+}

@@ -1,0 +1,173 @@
+.ct-white-label-options {
+
+	.ct-tabs {
+		margin: 0;
+
+		> ul {
+			position: sticky;
+			top: 32px;
+			z-index: 2;
+			margin: 0;
+			box-shadow: none;
+			background: #fff;
+			border-bottom: 2px solid var(--optionBorderColor);
+
+			--tabs-pills-margin: 0;
+			--tabs-pills-active-color: var(--ui-accent-color);
+			--tabs-pills-active-background-color: transparent;
+			--tabs-pills-inactive-background-color: transparent;
+
+			> li {
+				flex: initial;
+				border: none;
+				height: 50px;
+				padding: 0 35px;
+				font-weight: 600;
+
+				&:after {
+					display: none;
+				}
+
+				&.active {
+					&:before {
+						top: initial;
+						// height: 3px;
+						bottom: -2px;
+					}
+				}
+			}
+		}
+	}
+
+	.ct-current-tab {
+		padding: 0;
+	}
+
+	.ct-button-primary {
+		margin-top: 35px;
+	}
+}
+
+
+.ct-white-label-group {
+
+	&:not(:last-child) {
+		padding-bottom: 30px;
+		border-bottom: 1px dashed rgba(226, 230, 235, 0.9);
+	}
+
+	h4 {
+		position: sticky;
+		top: calc(50px + 32px);
+		z-index: 1;
+		font-size: 15px;
+		font-weight: 600;
+		margin-bottom: 15px;
+		padding-block: 30px 10px;
+		background: #fff;
+	}
+}
+
+.ct-white-label-option {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	&:not(:last-child) {
+		margin-bottom: 25px;
+	}
+
+	label {
+		font-size: 13px;
+		font-weight: 500;
+		letter-spacing: 0.1px;
+	}
+
+	input,
+	textarea {
+		padding: 5px 8px;
+		border-radius: 3px;
+
+		&:not(:focus) {
+			border-color: var(--optionBorderColor, #ddd);
+		}
+	}
+
+	input {
+		min-height: 35px;
+		line-height: normal;
+	}
+
+	.ct-upload-thumb {
+		display: flex;
+		gap: 8px;
+
+		input {
+			flex: 1;
+		}
+	}
+
+	.ct-option-description {
+		margin-top: 0;
+		opacity: 0.8;
+		color: inherit;
+	}
+}
+
+
+// advanced tab
+.ct-white-label-advanced {
+	padding-top: 30px;
+
+	.extension-notice {
+		margin-top: 25px;
+		padding: 10px 15px;
+		font-size: 14px;
+		line-height: 1.6;
+		background-color: #fcf9e8;
+		border-inline-start: 4px solid #dba617;
+	}
+}
+
+.ct-white-label-switch {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+
+	&:not(:last-child) {
+		margin-bottom: 30px;
+	}
+
+	span {
+		margin-inline-end: auto;
+	}
+
+	button {
+		display: flex;
+		appearance: none;
+		padding: 0;
+		border: none;
+		cursor: pointer;
+		background: transparent;
+
+		svg {
+			fill: rgba(94, 109, 128, 0.7);
+		}
+
+		&:hover svg {
+			fill: var(--ui-accent-color);
+		}
+	}
+
+	.ct-option-switch {
+		margin-inline-start: 20px;
+	}
+}
+
+// modal
+.ct-white-label-section-modal {
+
+	.ct-modal-scroll {
+		padding-bottom: 35px;
+	}
+}
