@@ -16,3 +16,118 @@ Blocksy Minimum Companion Version: 2.1.36-dev1
 Tags: accessibility-ready, blog, block-patterns, e-commerce, wide-blocks, block-styles, grid-layout, one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, translation-ready, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments
 */
 
+/* Top Deals Plus: homepage posts directly below the hero. */
+
+/* Replace the starter-site image logo with a clear text-based wordmark. */
+.site-branding .site-logo-container {
+	display: inline-flex;
+	align-items: center;
+	font-size: 32px;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+}
+
+.site-branding .site-logo-container img,
+.site-branding .site-logo-container svg {
+	display: none;
+}
+
+.site-branding .site-logo-container::before {
+	content: "🛍️";
+	display: inline-block;
+	margin-right: 10px;
+	font-size: 25px;
+	line-height: 1;
+}
+
+@media (max-width: 768px) {
+	.site-branding .site-logo-container {
+		font-size: 25px;
+	}
+
+	.site-branding .site-logo-container::before {
+		margin-right: 7px;
+		font-size: 20px;
+	}
+}
+
+.topdealsplus-home-posts {
+	padding: 72px 0 24px;
+}
+
+.topdealsplus-home-posts-heading {
+	margin-bottom: 32px;
+}
+
+.topdealsplus-eyebrow,
+.topdealsplus-home-post-meta {
+	margin-bottom: 8px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.topdealsplus-home-posts-heading h2 {
+	margin: 0;
+}
+
+.topdealsplus-home-posts-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.topdealsplus-home-post-card {
+	overflow: hidden;
+	border: 1px solid var(--theme-border-color, #e5e7eb);
+	border-radius: 12px;
+	background: var(--theme-palette-color-8, #fff);
+}
+
+.topdealsplus-home-post-image,
+.topdealsplus-home-post-image-placeholder {
+	display: block;
+	aspect-ratio: 16 / 10;
+	background: var(--theme-palette-color-6, #f3f4f6);
+}
+
+.topdealsplus-home-post-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.topdealsplus-home-post-content {
+	padding: 24px;
+}
+
+.topdealsplus-home-post-content h3 {
+	margin: 0 0 12px;
+	font-size: 21px;
+}
+
+.topdealsplus-home-post-content h3 a {
+	text-decoration: none;
+}
+
+.topdealsplus-home-post-content > p:not(.topdealsplus-home-post-meta) {
+	margin-bottom: 18px;
+}
+
+.topdealsplus-home-post-link {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+@media (max-width: 768px) {
+	.topdealsplus-home-posts {
+		padding-top: 48px;
+	}
+
+	.topdealsplus-home-posts-grid {
+		grid-template-columns: 1fr;
+	}
+}
