@@ -22,6 +22,51 @@ add_filter('blocksy:footer:copyright:value', function () {
 });
 
 /**
+ * Blocksy can omit style.css from the front-end bundle, so keep the brand
+ * replacement available inline as well.
+ */
+add_action('wp_head', function () {
+	if (is_admin()) {
+		return;
+	}
+
+	echo '<style id="topdealsplus-brand-overrides">
+		header .site-branding .site-logo-container img,
+		header .site-branding .site-logo-container svg {
+			display: none !important;
+		}
+		header .site-branding .site-logo-container {
+			display: inline-flex !important;
+			align-items: center;
+			font-size: 32px !important;
+			font-weight: 800 !important;
+			line-height: 1 !important;
+			letter-spacing: -0.04em;
+			text-decoration: none;
+		}
+		header .site-branding .site-logo-container::before {
+			content: "🛒";
+			display: inline-block;
+			margin-right: 10px;
+			font-size: 25px;
+			line-height: 1;
+		}
+		header .site-branding .site-logo-container::after {
+			content: "Top Deals Plus";
+		}
+		@media (max-width: 768px) {
+			header .site-branding .site-logo-container {
+				font-size: 25px !important;
+			}
+			header .site-branding .site-logo-container::before {
+				margin-right: 7px;
+				font-size: 20px;
+			}
+		}
+	</style>';
+});
+
+/**
  * Show the latest posts directly below the front-page hero.
  */
 function topdealsplus_front_page_posts() {
