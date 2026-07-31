@@ -12,6 +12,15 @@ add_filter('shortcode_atts_blocksy_posts', function($out, $pairs, $atts) {
     return $out;
 }, 10, 3);
 
+// 2. Force grid layout and boxed cards for post listings
+add_filter('blocksy:posts-listing:structure', function($structure, $prefix) {
+    return 'grid';
+}, 999, 2);
+
+add_filter('blocksy:posts-listing:card_type', function($card_type) {
+    return 'boxed';
+}, 999, 1);
+
 add_action('init', function() {
     // Ensure front page settings
     if (get_option('show_on_front') !== 'page' || get_option('page_on_front') != 402) {
@@ -41,6 +50,7 @@ add_action('init', function() {
         $changed = false;
         if (!isset($mods['blog_structure']) || $mods['blog_structure'] !== 'grid') {
             $mods['blog_structure'] = 'grid';
+            $mods['blog_columns'] = ['desktop' => 3, 'tablet' => 2, 'mobile' => 1];
             $changed = true;
         }
         if (!isset($mods['custom_logo']) || $mods['custom_logo'] != 422) {
