@@ -31,11 +31,14 @@ add_action('wp_head', function () {
 	}
 
 	echo '<style id="topdealsplus-brand-overrides">
-		header .site-branding .site-logo-container img,
-		header .site-branding .site-logo-container svg {
-			display: none !important;
+		header.ct-header .site-branding a.site-logo-container > img,
+		header.ct-header .site-branding a.site-logo-container > svg {
+			visibility: hidden !important;
+			position: absolute !important;
+			width: 0 !important;
+			height: 0 !important;
 		}
-		header .site-branding .site-logo-container {
+		header.ct-header .site-branding a.site-logo-container {
 			display: inline-flex !important;
 			align-items: center;
 			font-size: 32px !important;
@@ -44,26 +47,52 @@ add_action('wp_head', function () {
 			letter-spacing: -0.04em;
 			text-decoration: none;
 		}
-		header .site-branding .site-logo-container::before {
-			content: "🛒";
+		header.ct-header .site-branding a.site-logo-container::before {
+			content: none !important;
+		}
+		header.ct-header .site-branding a.site-logo-container .topdealsplus-logo-icon {
 			display: inline-block;
 			margin-right: 10px;
 			font-size: 25px;
 			line-height: 1;
 		}
-		header .site-branding .site-logo-container::after {
-			content: "Top Deals Plus";
-		}
+		body.home #main-container > main { padding-top: 140px !important; }
 		@media (max-width: 768px) {
-			header .site-branding .site-logo-container {
+			header.ct-header .site-branding a.site-logo-container {
 				font-size: 25px !important;
 			}
-			header .site-branding .site-logo-container::before {
+			header.ct-header .site-branding a.site-logo-container .topdealsplus-logo-icon {
 				margin-right: 7px;
 				font-size: 20px;
 			}
+			body.home #main-container > main { padding-top: 96px !important; }
 		}
 	</style>';
+});
+
+add_action('wp_footer', function () {
+	if (is_admin()) {
+		return;
+	}
+
+	?>
+	<script id="topdealsplus-text-logo">
+	(function () {
+		var logos = document.querySelectorAll('header.ct-header .site-branding a.site-logo-container');
+		logos.forEach(function (logo) {
+			logo.textContent = '';
+			var icon = document.createElement('span');
+			icon.className = 'topdealsplus-logo-icon';
+			icon.setAttribute('aria-hidden', 'true');
+			icon.textContent = '🛒';
+			var label = document.createElement('span');
+			label.textContent = 'Top Deals Plus';
+			logo.appendChild(icon);
+			logo.appendChild(label);
+		});
+	}());
+	</script>
+	<?php
 });
 
 /**
