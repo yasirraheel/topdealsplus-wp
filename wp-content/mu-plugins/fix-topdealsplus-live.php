@@ -4,20 +4,23 @@
  * Description: Ensures live server DB settings for Homepage Hero, Posts Grid, and Logo are always in sync.
  */
 
-add_action('init', function() {
-    // Only run once per request or when needed
-    static $run = false;
-    if ($run) return;
-    $run = true;
+// 1. Force blocksy_posts shortcode to target 'post' type instead of empty 'blc-product-review'
+add_filter('shortcode_atts_blocksy_posts', function($out, $pairs, $atts) {
+    if (isset($out['post_type']) && $out['post_type'] === 'blc-product-review') {
+        $out['post_type'] = 'post';
+    }
+    return $out;
+}, 10, 3);
 
-    // 1. Ensure front page settings
+add_action('init', function() {
+    // Ensure front page settings
     if (get_option('show_on_front') !== 'page' || get_option('page_on_front') != 402) {
         update_option('show_on_front', 'page');
         update_option('page_on_front', 402);
         update_option('page_for_posts', 12);
     }
 
-    // 2. Ensure Page 402 has post_type="post" shortcode
+    // Ensure Page 402 has post_type="post" shortcode
     $home_page = get_post(402);
     if ($home_page && strpos($home_page->post_content, 'post_type="blc-product-review"') !== false) {
         $updated_content = str_replace('post_type="blc-product-review"', 'post_type="post"', $home_page->post_content);
@@ -32,7 +35,7 @@ add_action('init', function() {
         }
     }
 
-    // 3. Ensure Blocksy Theme Mods (blog_structure=grid, custom_logo=422)
+    // Ensure Blocksy Theme Mods (blog_structure=grid, custom_logo=422)
     $mods = get_option('theme_mods_blocksy');
     if (is_array($mods)) {
         $changed = false;
